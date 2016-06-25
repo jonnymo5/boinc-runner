@@ -1,0 +1,12 @@
+stages:
+  - docker
+  - packer
+
+build_boinc_image:
+  stage: docker
+  script:
+    - docker build -t jonnymo5/boinc boinc-docker/
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push jonnymo5/boinc
+  only:
+    - master
