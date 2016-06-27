@@ -1,9 +1,9 @@
-FROM debian:jessie
+FROM ubuntu:16.04
 
 MAINTAINER John Moberly <jonnymo5@gmail.com>
 
 LABEL Description="A BOINC container to contain the insanity." \
-      Base_Image="debian:jessie"
+      Base_Image="ubuntu:16.04"
 
 
 RUN apt-get update &&                  \

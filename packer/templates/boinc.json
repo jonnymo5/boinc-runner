@@ -10,7 +10,7 @@
     "access_key": "{{user `aws_access_key`}}",
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-west-2",
-    "source_ami": "ami-6635cd06",
+    "source_ami": "ami-d06a90b0",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "boinc {{timestamp}}"
@@ -18,8 +18,8 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "scripts/boinc.conf",
-      "destination": "/tmp/boinc.conf"
+      "source": "scripts/boinc.service",
+      "destination": "/tmp/boinc.service"
     },
     {
       "type": "shell",
