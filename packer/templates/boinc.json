@@ -15,12 +15,19 @@
     "ssh_username": "ubuntu",
     "ami_name": "boinc {{timestamp}}"
   }],
-  "provisioners": [{
-    "type": "shell",
-    "script": "scripts/boinc.sh",
-    "environment_vars": [
-        "BOINC_URL={{user `boinc_url`}}",
-        "BOINC_KEY={{user `boinc_key`}}"
-    ]
-  }]
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "scripts/boinc.conf",
+      "destination": "/tmp/boinc.conf"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/boinc.sh",
+      "environment_vars": [
+          "BOINC_URL={{user `boinc_url`}}",
+          "BOINC_KEY={{user `boinc_key`}}"
+      ]
+    }
+  ]
 }
