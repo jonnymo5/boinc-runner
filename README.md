@@ -5,6 +5,7 @@ I've installed the Boinc client on various computers I've owned over the years a
 ---
 
 ### The Docker Image
+https://hub.docker.com/r/jonnymo5/boinc
 ##### Use:
 	docker run -d --log-driver=none --name boinc jonnymo5/boinc --attach_project <BOINC_URL> <BOINC_KEY>
 
